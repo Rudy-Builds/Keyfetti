@@ -192,7 +192,15 @@
 .controls button:hover {
   background: rgba(255,255,255,1);
 }
-  
+
+#mobileInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  width: 0;
+  border: 0;
+}
 
   /* small responsive tweaks */
   @media (max-width:520px){

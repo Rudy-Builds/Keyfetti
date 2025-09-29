@@ -9,6 +9,17 @@
   const confettiCanvas = document.getElementById('confetti-canvas');
   let allowAllKeys = false; // default: A-Z only
 
+  const mobileInput = document.getElementById('mobileInput');
+
+    // Detect mobile (simple check)
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    // Ensure input focus on mobile so keyboard shows
+    if (isMobile) {
+      setTimeout(() => mobileInput.focus(), 400);
+      game.addEventListener('click', () => mobileInput.focus());
+    }
+
   /* CONFIG */
   const POP_HOLD_MS = 700;            // how long the center letter stays before floating
   const FLOAT_DURATION = 850;         // animation duration to move into document
@@ -57,8 +68,9 @@
   setTimeout(() => game.setAttribute('tabindex', '0'), 0);
 
   /*unified key handler*/
+  const keyTarget = isMobile ? mobileInput : document;
 
-  document.addEventListener('keydown', (ev) => {
+  keyTarget.addEventListener('keydown', (ev) => {
   const intro = document.getElementById('introStage');
   if (intro && !intro.dataset.hidden) {
     intro.style.display = 'none';
