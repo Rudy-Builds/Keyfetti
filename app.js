@@ -277,6 +277,8 @@ document.getElementById('restartBtn').addEventListener('click', () => {
   docEl.innerHTML = '';
 });
 
+docEl.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
 // Toggle button switches key mode
 document.getElementById('toggleBtn').addEventListener('click', (e) => {
   allowAllKeys = !allowAllKeys;
