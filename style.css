@@ -37,7 +37,7 @@
   }
 
   .game {
-    position:fixed;
+    position:relative;
     min-height:100vh;
     display:flex;
     flex-direction:column;
@@ -53,7 +53,7 @@
     left:0; top:0;
     width:100%;
     height:100%;
-    pointer-events:none;
+    pointer-events:none; /* allow clicks through */
     z-index:0;
   }
 
@@ -91,7 +91,7 @@
 
   /* Document area at bottom */
   .document {
-    position:absolute;
+    position:fixed;
     bottom:28px;
     left:50%;
     transform:translateX(-50%);
@@ -192,15 +192,13 @@
 .controls button:hover {
   background: rgba(255,255,255,1);
 }
-
 #mobileInput {
   position: absolute;
-  bottom: -40px;   /* push it just below the viewport */
-  left: -9999px;   /* or far to the left */
-  width: 1px;
-  height: 1px;
-  opacity: 0.01;   /* not fully 0, so browser still treats it as visible */
-  border: none;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  width: 0;
+  border: 0;
 }
 
   /* small responsive tweaks */
