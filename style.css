@@ -91,7 +91,7 @@
 
   /* Document area at bottom */
   .document {
-    position:fixed;
+    position:absolute;
     bottom:28px;
     left:50%;
     transform:translateX(-50%);

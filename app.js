@@ -35,13 +35,12 @@
 }
 
   // Listen for visualViewport resize to scroll input into view
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener('resize', () => {
-      setTimeout(() => {
-        mobileInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
-    });
-  }
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', () => {
+    const height = window.visualViewport.height;
+    game.style.height = height + "px";
+  });
+}
 
   /* CONFIG */
   const POP_HOLD_MS = 700;            // how long the center letter stays before floating
