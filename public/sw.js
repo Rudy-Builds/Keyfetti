@@ -1,4 +1,4 @@
-const CACHE_NAME = 'keyfetti-v1';
+const CACHE_NAME = 'keyfetti-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -35,6 +35,6 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });
